@@ -1,6 +1,6 @@
 # bsn-gen-rs
 
-### Genereert een .csv-bestand met daarin alle 90 miljoen mogelijke BSNs.
+### Genereert een all_bsns.csv bestand met daarin alle 90 miljoen mogelijke BSNs.
 
 Gebruik:  
 - `cargo build --release`  
