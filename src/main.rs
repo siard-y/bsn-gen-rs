@@ -24,6 +24,7 @@ fn to_digits(v: i32) -> Vec<u8> {
 fn is_valid_bsn(bsn: i32) -> bool {
     let bsn_vec:Vec<u8> = to_digits(bsn);
     let multiply_list: [i8; 9] = [9, 8, 7, 6, 5, 4, 3, 2, -1];
+
     let mut bsn_sum: i32 = 0;
 
     for (idx, digit) in bsn_vec.iter().enumerate() {
@@ -34,12 +35,11 @@ fn is_valid_bsn(bsn: i32) -> bool {
 }
 
 fn gen_valid_bsns() -> Vec<String> {
-    let mut valid_bsns: Vec::<String> = Vec::new();
-
     let max_n: i32 = 999999999;
-    
     let bsns = 1..=max_n;
     let pb = ProgressBar::new(max_n as u64);
+
+    let mut valid_bsns: Vec::<String> = Vec::new();
 
     for bsn in bsns {
         if is_valid_bsn(bsn) {
