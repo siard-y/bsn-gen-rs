@@ -36,7 +36,7 @@ fn is_valid_bsn(bsn: i32) -> bool {
 }
 
 fn gen_valid_bsns() -> Vec<String> {
-    let max_n: i32 = 999;
+    let max_n: i32 = 999999999;
     let bsns = 1..=max_n;
     let pb = ProgressBar::new(max_n as u64);
 
