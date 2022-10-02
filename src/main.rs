@@ -8,6 +8,7 @@ fn csv_run(bsn_vec: Vec<String>) -> Result<(), Box<dyn Error>> {
     let mut wtr = WriterBuilder::new()
                                     .delimiter(b'\n')
                                     .from_path("./all_bsns.csv")?;
+    wtr.write_field("bsn")?;
     wtr.write_record(bsn_vec)?;
     wtr.flush()?;
     Ok(())
@@ -35,7 +36,7 @@ fn is_valid_bsn(bsn: i32) -> bool {
 }
 
 fn gen_valid_bsns() -> Vec<String> {
-    let max_n: i32 = 999999999;
+    let max_n: i32 = 999;
     let bsns = 1..=max_n;
     let pb = ProgressBar::new(max_n as u64);
 
