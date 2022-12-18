@@ -6,8 +6,9 @@ use csv::WriterBuilder;
 
 fn csv_run(bsn_vec: Vec<String>) -> Result<(), Box<dyn Error>> {
     let mut wtr = WriterBuilder::new()
-                                    .delimiter(b'\n')
-                                    .from_path("./all_bsns.csv")?;
+                      .delimiter(b'\n')
+                      .from_path("./all_bsns.csv")?;
+        
     wtr.write_field("bsn")?;
     wtr.write_record(bsn_vec)?;
     wtr.flush()?;
