@@ -1,5 +1,6 @@
 use std::error::Error;
 use std::process;
+use rayon::prelude::*;
 use indicatif::ProgressBar;
 use csv::WriterBuilder;
 
