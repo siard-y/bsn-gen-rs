@@ -38,12 +38,12 @@ fn is_valid_bsn(bsn: i32) -> bool {
 
 fn gen_valid_bsns() -> Vec<String> {
     let max_n: i32 = 999999999;
-    let bsns = 1..=max_n;
+    let bsns_range = 1..=max_n;
     let pb = ProgressBar::new(max_n as u64);
 
     let mut valid_bsns: Vec::<String> = Vec::new();
 
-    for bsn in bsns {
+    for bsn in bsns_range {
         if is_valid_bsn(bsn) {
             valid_bsns.push(format!("{:0>9}", bsn.to_string()));
         }
