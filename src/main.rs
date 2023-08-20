@@ -1,4 +1,4 @@
-use std::{process, time::{Duration, Instant}, error::Error};
+use std::{ process, time::{ Duration, Instant }, error::Error };
 use rayon::prelude::*;
 use csv::WriterBuilder;
 
@@ -39,9 +39,7 @@ fn gen_valid_bsns() -> Vec<String> {
     let valid_bsns: Vec<String> = bsns_range
         .into_par_iter()
         .filter(|&bsn| is_valid_bsn(bsn))
-        .map(|bsn| {
-            format!("{:0>9}", bsn.to_string())
-        })
+        .map(|bsn| format!("{:0>9}", bsn.to_string()))
         .collect();
 
     valid_bsns
